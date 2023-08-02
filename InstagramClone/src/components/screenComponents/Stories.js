@@ -14,109 +14,97 @@ const Stories = () => {
     },
     {
       id: 0,
-      name: 'Ram_Charan',
+      name: 'Ahri KDA',
       image: require('../storage/images/perfil2.jpg'),
     },
     {
       id: 0,
-      name: 'Tom',
+      name: 'Basic Ahri',
       image: require('../storage/images/perfil3.jpg'),
     },
     {
       id: 0,
-      name: 'The_Groot',
+      name: 'Ahri Blossom',
       image: require('../storage/images/perfil4.jpg'),
     },
     ,
     {
       id: 0,
-      name: 'loverland',
+      name: 'Ahri Star G.',
       image: require('../storage/images/perfil5.jpg'),
     },
     ,
     {
       id: 0,
-      name: 'chillhouse',
+      name: 'Ahri Coven',
       image: require('../storage/images/perfil6.jpg'),
     },
   ];
 
   return (
-    <ScrollView
-      horizontal={true}
-      showsHorizontalScrollIndicator={false}
-      style={{paddingVertical: 20}}>
-      {storyInfo.map((data, index) => {
-        return (
-          <TouchableOpacity
-            key={index}
-            onPress={() =>
-              navigation.push('Status', {
-                name: data.name,
-                image: data.image,
-              })
-            }>
-            <View
-              style={{
-                flexDirection: 'column',
-                paddingHorizontal: 8,
-                position: 'relative',
-              }}>
-              {data.id == 1 ? (
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{paddingVertical: 20}}>
+        {storyInfo.map((data, index) => {
+            return (
+            <TouchableOpacity key={index} onPress={() => navigation.push('Status', {name: data.name, image: data.image,})}>
+                <View style={{
+                    flexDirection: 'column', 
+                    paddingHorizontal: 8, 
+                    position: 'relative'
+                    }}>
+                {data.id == 1 ? (
+                    <View style={{
+                        position: 'absolute', 
+                        bottom: 15,
+                        right: 10, 
+                        zIndex: 1
+                        }}>
+                    <Entypo
+                        name="circle-with-plus"
+                        style={{
+                        fontSize: 20,
+                        color: 'blue',
+                        backgroundColor: 'white',
+                        borderRadius: 100,
+                        }}
+                    />
+                    </View>
+                ) : null}
                 <View
-                  style={{
-                    position: 'absolute',
-                    bottom: 15,
-                    right: 10,
-                    zIndex: 1,
-                  }}>
-                  <Entypo
-                    name="circle-with-plus"
                     style={{
-                      fontSize: 20,
-                      color: '#405de6',
-                      backgroundColor: 'white',
-                      borderRadius: 100,
-                    }}
-                  />
-                </View>
-              ) : null}
-              <View
-                style={{
-                  width: 68,
-                  height: 68,
-                  backgroundColor: 'white',
-                  borderWidth: 1.8,
-                  borderRadius: 100,
-                  borderColor: '#c13584',
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <Image
-                  source={data.image}
-                  style={{
-                    resizeMode: 'cover',
-                    width: '92%',
-                    height: '92%',
+                    width: 68,
+                    height: 68,
+                    backgroundColor: 'white',
+                    borderWidth: 1.8,
                     borderRadius: 100,
-                    backgroundColor: 'orange',
-                  }}
-                />
-              </View>
-              <Text
-                style={{
-                  textAlign: 'center',
-                  fontSize: 10,
-                  opacity: data.id == 0 ? 1 : 0.5,
-                }}>
-                {data.name}
-              </Text>
-            </View>
-          </TouchableOpacity>
-        );
-      })}
-    </ScrollView>
-  );
-};
+                    borderColor: '#c13584',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    }}>
+                    <Image
+                    source={data.image}
+                    style={{
+                        resizeMode: 'cover',
+                        width: '92%',
+                        height: '92%',
+                        borderRadius: 100,
+                        backgroundColor: 'orange',
+                    }}
+                    />
+                </View>
+                <Text
+                    style={{
+                    textAlign: 'center',
+                    fontSize: 10,
+                    opacity: data.id == 0 ? 1 : 0.5,
+                    }}>
+                    {data.name}
+                </Text>
+                </View>
+            </TouchableOpacity>
+            );
+        })}
+        </ScrollView>
+    );
+    };
 
 export default Stories;

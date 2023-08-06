@@ -9,8 +9,7 @@ const Home = () => {
   return (
     <View style={{backgroundColor: 'white', height: '100%'}}>
       <StatusBar backgroundColor="white" barStyle="dark-content" animated={true}/>
-      <View style={{justifyContent: 'space-between', flexDirection: 'row', paddingHorizontal: 15, alignItems: 'center'}}>
-        <FontAwesome name="plus-square-o" style={{fontSize: 24}} />
+      <View style={{justifyContent: 'space-between', flexDirection: 'row', paddingHorizontal: 15}}>
         <Text style={{fontFamily: 'lobster', fontSize: 25, fontWeight: '500'}}>
           Instagram
         </Text>
